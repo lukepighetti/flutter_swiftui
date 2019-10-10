@@ -1,14 +1,28 @@
 # swiftui
 
-A new Flutter package project.
+A research implementation of SwiftUI view transformations on Flutter Widgets using Dart extensions.
 
-## Getting Started
+```dart
+class Example extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text("padded").padded(8),
+        Text("offsetX").offsetX(100),
+        Text("offsetY").offsetY(-200),
+        Text("offsetDegrees").offsetDegrees(180, 100),
+        Text("foo").border(Border.all()),
+        Text("More padded").padded(40),
+      ],
+    );
+  }
+}
+```
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Contributing
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+Since this API is intended for research, I'm totally happy with people submitting breaking changes and altering the direction of this project. My starting point was to try to implement the most-common View transformations you see in SwiftUI, but I make no claims that the architecture I've chosen makes the most sense. I'd much rather someone break the API with something novel than try to fight with implementing the SwiftUI api extactly.
+
+In other words, SwiftUI is merely an inspiration, and not a specification.
