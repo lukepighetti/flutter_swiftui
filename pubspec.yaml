@@ -1,8 +1,8 @@
 name: swiftui
-description: A new Flutter package project.
+description: A faithful implementation of SwiftUI as extensions on Widgets.
 version: 0.0.1
-author:
-homepage:
+author: Luke Pighetti <lukepighetti@theyakka.com>
+homepage: https://github.com/lukepighetti/flutter_swiftui
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
