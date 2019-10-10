@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/widgets.dart';
 
 /// Implementation of SwiftUI View transformations.
@@ -81,7 +83,18 @@ extension SettingThePositionOfAView on Widget {
       Transform.translate(offset: offset, child: this);
 
   /// Offsets the view by the specified horizontal and vertical distances.
-  Widget offsetOnly({double x, double y}) => offset(Offset(x, y));
+  // Widget offsetOnly({double x = 0.0, double y = 0.0}) =>
+  //     Transform.translate(offset: Offset(x, y), child: this);
+
+  Widget offsetX(double x) =>
+      Transform.translate(offset: Offset(x, 0.0), child: this);
+
+  Widget offsetY(double y) =>
+      Transform.translate(offset: Offset(0.0, y), child: this);
+
+  Widget offsetDegrees(double degrees, double distance) => Transform.translate(
+      offset: Offset.fromDirection(2 * pi * (degrees / 360), distance),
+      child: this);
 
   /// func edgesIgnoringSafeArea(Edge.Set) -> View
   /// Extends the view out of the safe area on the specified edges.
@@ -97,11 +110,11 @@ extension AligningViews on Widget {
 
 extension AdjustingThePaddingOfAView on Widget {
   /// Pads the view along all edge insets by the specified amount.
-  Widget padding(double amount) =>
+  Widget padded(double amount) =>
       Padding(padding: EdgeInsets.all(amount), child: this);
 
   /// Pads the view using the specified edge insets.
-  Widget paddingInsets(EdgeInsets insets) =>
+  Widget paddedInsets(EdgeInsets insets) =>
       Padding(padding: insets, child: this);
 
   /// func padding(Edge.Set, CGFloat?) -> View
@@ -111,15 +124,21 @@ extension AdjustingThePaddingOfAView on Widget {
 extension SettingTheForegroundOrBackgroundOfAView on Widget {
   /// func overlay<Overlay>(Overlay, alignment: Alignment) -> View
   /// Layers a secondary view in front of the view.
-  Widget overlay(Widget overlay, Alignment alignment) =>
-      Stack(alignment: Alignment.center, children: <Widget>[this, overlay]);
+  Widget overlay(
+    Widget overlay, [
+    Alignment alignment = Alignment.center,
+  ]) =>
+      Stack(alignment: alignment, children: <Widget>[this, overlay]);
 
   /// func foregroundColor(Color?) -> View
   /// Sets the color that the view uses for foreground elements.
 
   /// func background<Background>(Background, alignment: Alignment) -> View
-  Widget background(Widget background, Alignment alignment) =>
-      Stack(alignment: Alignment.center, children: <Widget>[background, this]);
+  Widget background(
+    Widget background, [
+    Alignment alignment = Alignment.center,
+  ]) =>
+      Stack(alignment: alignment, children: <Widget>[background, this]);
 
   /// func zIndex(Double) -> View
   /// Controls the display order of overlapping views.

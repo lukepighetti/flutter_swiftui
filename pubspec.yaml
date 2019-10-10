@@ -5,7 +5,7 @@ author: Luke Pighetti <lukepighetti@theyakka.com>
 homepage: https://github.com/lukepighetti/flutter_swiftui
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: ">=2.6.0-dev <3.0.0"
 
 dependencies:
   flutter:
