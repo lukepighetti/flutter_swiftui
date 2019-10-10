@@ -1,6 +1,6 @@
 name: swiftui
 description: A faithful implementation of SwiftUI as extensions on Widgets.
-version: 0.0.1
+version: 0.1.0
 author: Luke Pighetti <lukepighetti@theyakka.com>
 homepage: https://github.com/lukepighetti/flutter_swiftui
 
