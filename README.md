@@ -1,6 +1,6 @@
 # swiftui
 
-A research implementation of SwiftUI view transformations on Flutter Widgets using Dart extensions.
+A research implementation of SwiftUI view transformations on Flutter Widgets using Dart extensions. It is on Pub, but I recommend consuming it from GitHub as that will be most exciting! 😄
 
 ```yaml
 dependencies:
