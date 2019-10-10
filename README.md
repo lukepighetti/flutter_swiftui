@@ -2,6 +2,14 @@
 
 A research implementation of SwiftUI view transformations on Flutter Widgets using Dart extensions.
 
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  swiftui:
+    git: https://github.com/lukepighetti/flutter_swiftui
+```
+
 ```dart
 class Example extends StatelessWidget {
   @override
